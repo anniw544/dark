@@ -7,9 +7,11 @@ public class PickupObjTrigger : MonoBehaviour
     
 
 
-
+// object 1 that appeares
     public GameObject ColectedObj;
+// object 2 that appeares
     public GameObject TriggerObj;
+//object that dissapeares
     public GameObject DeleatedObj;
 
 
@@ -25,12 +27,13 @@ public class PickupObjTrigger : MonoBehaviour
         {
             if (Input.GetKey(KeyCode.E))
             {
+                // hides and deactivates the interaced object
                 this.gameObject.SetActive(false);
-
+                // deaactivates the DeleatedObj object
                 DeleatedObj.SetActive(false);
-                
+                //activates object 1
                 ColectedObj.SetActive(true);
-
+                //activates object 2
                 TriggerObj.SetActive(true);
                 
             }
