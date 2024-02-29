@@ -13,6 +13,8 @@ public class PickupObjTrigger : MonoBehaviour
     public GameObject TriggerObj;
 //object that dissapeares
     public GameObject DeleatedObj;
+//ui that dissapeares
+    public GameObject UI;
 
 
 
@@ -35,6 +37,8 @@ public class PickupObjTrigger : MonoBehaviour
                 ColectedObj.SetActive(true);
                 //activates object 2
                 TriggerObj.SetActive(true);
+                // deaactivates the Ui
+                UI.SetActive(false);
                 
             }
         }
