@@ -1145,6 +1145,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1694398960382509617}
   - component: {fileID: 3967502891901440239}
+  - component: {fileID: 1857244631712926762}
   m_Layer: 0
   m_Name: Hands lmb
   m_TagString: Untagged
@@ -1195,6 +1196,18 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
+--- !u!114 &1857244631712926762
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4607690942832958165}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 369c5dee06d455549b22424b721640d4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4766755498769340801
 GameObject:
   m_ObjectHideFlags: 0
