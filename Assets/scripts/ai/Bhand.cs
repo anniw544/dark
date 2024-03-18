@@ -9,22 +9,23 @@ public class BHand : MonoBehaviour
 
  void Start()
     {
-         anim = gameObject.GetComponent<Animation>();
         
+        Debug.Log("e");
     }
 
 
-  private void OnTriggerStay(Collider other)
+  void OnTriggerEnter(Collider other)
     {
-    if(other.gameObject.tag == "Flash")
+        Debug.Log("meep");
+        if(other.gameObject.tag == "Flash")
         {  
+            anim = other.GetComponent<Animation>();
             Debug.Log("Death");
             anim.Play("kill");
         }
-    else
-    {
-            anim.Play("BHandLmbIdle");
-    }
-    
+        else
+        {
+            Debug.Log(other.tag);
+        }
     }
 }
