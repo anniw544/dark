@@ -7,25 +7,23 @@ public class BHand : MonoBehaviour
     
     private Animation anim;
 
- void Start()
-    {
-        
-        Debug.Log("e");
-    }
+
 
 
   void OnTriggerEnter(Collider other)
     {
-        Debug.Log("meep");
-        if(other.gameObject.tag == "Flash")
+            //Debug.Log("touvhy");
+        if(other.gameObject.tag == "spoopy")
         {  
-            anim = other.GetComponent<Animation>();
-            Debug.Log("Death");
-            anim.Play("kill");
+            //Debug.Log("Death");
+            StartCoroutine(BhDeath(other.gameObject));
         }
-        else
-        {
-            Debug.Log(other.tag);
-        }
+
+    }
+
+    IEnumerator BhDeath(GameObject other)
+    {
+        yield return new WaitForSeconds(3.0f);
+        Destroy(other);
     }
 }
