@@ -7,7 +7,7 @@ public class PickupFlashlight : MonoBehaviour
     
 
 
-
+    public bool flashLightHave;
     public GameObject FlashLightOnPlayer;
 
 
@@ -15,6 +15,8 @@ public class PickupFlashlight : MonoBehaviour
     void Start()
     {
         FlashLightOnPlayer.SetActive(false);
+
+        flashLightHave = false;
     }
 
     private void OnTriggerStay(Collider other)
@@ -23,6 +25,8 @@ public class PickupFlashlight : MonoBehaviour
         {
             if (Input.GetKey(KeyCode.E))
             {
+                flashLightHave = true;
+                
                 this.gameObject.SetActive(false);
                 
                 FlashLightOnPlayer.SetActive(true);

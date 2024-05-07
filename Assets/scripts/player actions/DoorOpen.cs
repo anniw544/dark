@@ -14,7 +14,6 @@ public class DoorOpen : MonoBehaviour
 
     void Start()
     {
-        OpenedDoor.SetActive(false);
     }
 
     private void OnTriggerStay(Collider other)
