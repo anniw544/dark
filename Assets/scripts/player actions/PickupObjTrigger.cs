@@ -23,6 +23,8 @@ public class PickupObjTrigger : MonoBehaviour
     void Start()
     {
         ColectedObj.SetActive(false);
+        TriggerObj.SetActive(false);
+
     }
 
     private void OnTriggerStay(Collider other)
