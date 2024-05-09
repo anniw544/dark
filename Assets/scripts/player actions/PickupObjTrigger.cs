@@ -15,8 +15,7 @@ public class PickupObjTrigger : MonoBehaviour
     public GameObject DeleatedObj;
 //ui that dissapeares
     public GameObject UI;
-//box for item toggle
-    public GameObject box;
+
 
 
 
@@ -43,8 +42,7 @@ public class PickupObjTrigger : MonoBehaviour
                 TriggerObj.SetActive(true);
                 // deaactivates the Ui
                 UI.SetActive(false);
-                // activeate the box
-                box.SetActive(true);
+              
 
                 
             }

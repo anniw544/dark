@@ -6,44 +6,54 @@ public class LightToggle : MonoBehaviour
 {
 
 
-    private float flashOn;
-    // 0 = on  1 = off
-    public GameObject Flashreal;
-    public GameObject Flashfake;
-    bool flashLightHave;
-    public GameObject flashOnTable;
-
-
+    public GameObject Light;
+    int light_on = 1;
+    public int battery = 100;
+    
     void Start () 
     {
-        flashOn = 0;
+        light_on = 0;
        
     }
 
 
     void Update()
     {
-        if (Input.GetKey(KeyCode.Mouse0))
+        if (Input.GetKey(KeyCode.Mouse0) && light_on == 0 && battery > 0)
         {
-            flashLightHave = flashOnTable.GetComponent<PickupFlashlight>().flashLightHave;
-            
-            if (flashLightHave == true) 
-            {     
-                if(flashOn == 0)
-                {
-                    Flashreal.SetActive(false);
-                    Flashfake.SetActive(true);
-                    flashOn = 1;
-                }
-            
-                else
-                {
-                    Flashreal.SetActive(false);
-                    Flashfake.SetActive(true);
-                    flashOn = 0;
-                }
-
-            }  
+            Light.SetActive(true);
+            StartCoroutine(LightOn());
+             
         }
+
+        if (Input.GetKey(KeyCode.Mouse0) && light_on == 1)
+        {
+            Light.SetActive(false);
+            StartCoroutine(LightOff());
+             
+        }
+// shabingus
+        if (battery > 0 && light_on == 1)
+        {
+            battery -= 1;
+        }
+
+        if (battery == 0)
+        {
+            Light.SetActive(false);
+            light_on = 0;
+        }
+    }
+
+        private IEnumerator LightOn()
+    { 
+            yield return new WaitForSeconds(1);
+            light_on = 1;    
+    }
+
+    private IEnumerator LightOff()
+    { 
+            yield return new WaitForSeconds(1);
+            light_on = 0;
     }
 }
