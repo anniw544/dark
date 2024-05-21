@@ -1033,7 +1033,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Light: {fileID: 1556255675}
   battery: 2000
-  bat_refil: 0
+  bat_refil: 1
 --- !u!1 &424594311
 GameObject:
   m_ObjectHideFlags: 0

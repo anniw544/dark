@@ -9,12 +9,12 @@ public class LightToggle : MonoBehaviour
     public GameObject Light;
     int light_on = 1;
     public int battery = 100;
-    public int bat_refil = 0;
+    public int bat_refil = 1;
     
     void Start () 
     {
         light_on = 0;
-        int bat_refil = 1;
+        //int bat_refil = 1;
     }
 
 
@@ -45,10 +45,11 @@ public class LightToggle : MonoBehaviour
             light_on = 0;
         }
 // shoborgus
-        if (Input.GetKey(KeyCode.R) && bat_refil > 0);
+        if (Input.GetKeyDown(KeyCode.R) && bat_refil > 0)
         {
             battery = 2000;
             bat_refil -= 1;
+
         }
 
     }
