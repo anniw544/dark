@@ -22,7 +22,7 @@ public class prompt : MonoBehaviour
       void OnTriggerExit(Collider other)
 
     {
-        if(other.gameObject.tag == "CollectableItem")
+        if(other.gameObject.tag == "Player")
         {
             Debug.Log("dissapear");
                 Prompt.SetActive(false);
@@ -32,7 +32,7 @@ public class prompt : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.gameObject.tag == "CollectableItem")
+        if(other.gameObject.tag == "Player")
         {
             Debug.Log("appear");
                 Prompt.SetActive(true);

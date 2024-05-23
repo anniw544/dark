@@ -7,6 +7,9 @@ TagManager:
   - CollectableItem
   - Flash
   - spoopy
+  - lart
+  - bart
+  - UI DESPAWN
   layers:
   - Default
   - TransparentFX

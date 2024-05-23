@@ -11,12 +11,34 @@ public class LightToggle : MonoBehaviour
     public int battery = 100;
     public int bat_refil = 1;
     
+    
     void Start () 
     {
         light_on = 0;
         //int bat_refil = 1;
     }
 
+//ad
+
+
+// shacborgaosisy
+    private void OnTriggerStay(Collider other)
+    {
+    
+        if (Input.GetKey(KeyCode.E))
+        {
+            
+            if (other.tag == "lart")
+            {
+                other.gameObject.SetActive(false);
+                bat_refil = 1;
+            }
+                
+            }
+                
+        }
+    
+    }
 
     void Update()
     {
@@ -51,6 +73,7 @@ public class LightToggle : MonoBehaviour
             bat_refil -= 1;
 
         }
+
 
     }
 
