@@ -7,9 +7,10 @@ public class LightToggle : MonoBehaviour
 
 
     public GameObject Light;
-    int light_on = 1;
+    int light_on = 0;
     public int battery = 100;
     public int bat_refil = 1;
+
     
     
     void Start () 
@@ -18,30 +19,27 @@ public class LightToggle : MonoBehaviour
         //int bat_refil = 1;
     }
 
-//ad
 
 
-// shacborgaosisy
+ // shacborgaosisy
     private void OnTriggerStay(Collider other)
     {
     
-        if (Input.GetKey(KeyCode.E))
+        if (Input.GetKey(KeyCode.E) && other.tag == "lart")
         {
-            
-            if (other.tag == "lart")
-            {
-                other.gameObject.SetActive(false);
-                bat_refil = 1;
-            }
-                
-            }
-                
+
+            other.gameObject.SetActive(false);
+            bat_refil += 1;
+        
         }
-    
+                
     }
+    
 
     void Update()
+    
     {
+
         if (Input.GetKey(KeyCode.Mouse0) && light_on == 0 && battery > 0)
         {
             Light.SetActive(true);
@@ -55,7 +53,7 @@ public class LightToggle : MonoBehaviour
             StartCoroutine(LightOff());
              
         }
-// shabingus
+ // shabingus
         if (battery > 0 && light_on == 1)
         {
             battery -= 1;
@@ -66,7 +64,7 @@ public class LightToggle : MonoBehaviour
             Light.SetActive(false);
             light_on = 0;
         }
-// shoborgus
+ // shoborgus
         if (Input.GetKeyDown(KeyCode.R) && bat_refil > 0)
         {
             battery = 2000;

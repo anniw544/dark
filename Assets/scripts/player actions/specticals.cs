@@ -9,11 +9,14 @@ public class specticals : MonoBehaviour
     public GameObject Light;
     int light_on = 1;
     public int battery = 100;
+    public GameObject textHide;
+   
     
     void Start () 
     {
         light_on = 0;
-       
+        textHide.SetActive(false);
+        
     }
 
 
@@ -23,6 +26,8 @@ public class specticals : MonoBehaviour
         {
             Light.SetActive(true);
             StartCoroutine(LightOn());
+            textHide.SetActive(true);
+            
              
         }
 
@@ -30,7 +35,8 @@ public class specticals : MonoBehaviour
         {
             Light.SetActive(false);
             StartCoroutine(LightOff());
-             
+            textHide.SetActive(false);
+           
         }
 // shabingus
         if (battery > 0 && light_on == 1)
@@ -42,6 +48,8 @@ public class specticals : MonoBehaviour
         {
             Light.SetActive(false);
             light_on = 0;
+            textHide.SetActive(false);
+            
         }
     }
 
