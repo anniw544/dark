@@ -8,7 +8,6 @@ public class specticals : MonoBehaviour
 
     public GameObject Light;
     int light_on = 1;
-    public int battery = 100;
     public GameObject textHide;
    
     
@@ -22,7 +21,7 @@ public class specticals : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKey(KeyCode.Mouse1) && light_on == 0 && battery > 0)
+        if (Input.GetKey(KeyCode.Mouse1) && light_on == 0)
         {
             Light.SetActive(true);
             StartCoroutine(LightOn());
@@ -39,18 +38,7 @@ public class specticals : MonoBehaviour
            
         }
 // shabingus
-        if (battery > 0 && light_on == 1)
-        {
-            battery -= 1;
-        }
-
-        if (battery == 0)
-        {
-            Light.SetActive(false);
-            light_on = 0;
-            textHide.SetActive(false);
-            
-        }
+        
     }
 
         private IEnumerator LightOn()

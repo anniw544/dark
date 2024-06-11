@@ -10,6 +10,7 @@ TagManager:
   - lart
   - bart
   - UI DESPAWN
+  - storT
   layers:
   - Default
   - TransparentFX
@@ -25,8 +26,8 @@ TagManager:
   - fake
   - uv fake
   - uv useable
-  - 
-  - 
+  - no colide
+  - button ligit
   - 
   - 
   - 
